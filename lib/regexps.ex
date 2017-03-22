@@ -1,7 +1,7 @@
-defmodule Inflector.Regexp do
+defmodule Inflector.Regexps do
     
 
-    @plural_regular_regexp [
+    @plural_regular_regexps [
                      {~r/(?i)(s)tatus$/, "${1}${2}tatuses"},
                      {~r/(?i)(quiz)$/, "${1}zes"},
                      {~r/(?i)^(ox)$/, "${1}${2}en"},
@@ -24,8 +24,49 @@ defmodule Inflector.Regexp do
                      {~r/$/, "s"}
                     ]
 
+    @plural_irregular_regexps [
+                     {~r/atlas/, "atlases"}, 
+                     {~r/beef/, "beefs"}, 
+                     {~r/brother/, "brothers"},
+                     {~r/cafe/, "cafes"}, 
+                     {~r/child/, "children"}, 
+                     {~r/cookie/, "cookies"},
+                     {~r/corpus/, "corpuses"}, 
+                     {~r/cow/, "cows"}, 
+                     {~r/ganglion/, "ganglions"},
+                     {~r/genie/, "genies"}, 
+                     {~r/genus/, "genera"}, 
+                     {~r/graffito/, "graffiti"}, 
+                     {~r/hoof/, "hoofs"}, 
+                     {~r/loaf/, "loaves"}, 
+                     {~r/man/, "men"},
+                     {~r/money/, "monies"}, 
+                     {~r/mongoose/, "mongooses"}, 
+                     {~r/move/, "moves"}, 
+                     {~r/mythos/, "mythoi"}, 
+                     {~r/niche/, "niches"}, 
+                     {~r/numen/, "numina"},
+                     {~r/occiput/, "occiputs"}, 
+                     {~r/octopus/, "octopuses"}, 
+                     {~r/opus/, "opuses"}, 
+                     {~r/ox/, "oxen"}, 
+                     {~r/penis/, "penises"}, 
+                     {~r/person/, "people"}, 
+                     {~r/sex/, "sexes"}, 
+                     {~r/soliloquy/, "soliloquies"}, 
+                     {~r/testis/, "testes"}, 
+                     {~r/trilby/, "trilbys"}, 
+                     {~r/turf/, "turfs"}, 
+                     {~r/potato/, "potatoes"}, 
+                     {~r/hero/, "heroes"}, 
+                     {~r/tooth/, "teeth"}, 
+                     {~r/goose/, "geese"}, 
+                     {~r/foot/, "feet"}
+                    ]
+
+
     
-    @singular_regular_regexp [
+    @singular_regular_regexps [
                      {~r/(?i)(s)tatuses$/, "${1}${2}tatus"},
                      {~r/(?i)^(.*)(menu)s$/, "${1}${2}"},
                      {~r/(?i)(quiz)zes$/, "$1"},
@@ -61,14 +102,64 @@ defmodule Inflector.Regexp do
                      {~r/^(.*us)$/, "$1"}, 
                      {~r/(?i)s$/, ""}
                     ]
+    
+    @singular_irregular_regexps [
+                     {~r/foes/, "foe"}, 
+                     {~r/waves/, "wave"}, 
+                     {~r/curves/, "curve"}, 
+                     {~r/atlases/, "atlas"}, 
+                     {~r/beefs/, "beef"}, 
+                     {~r/brothers/, "brother"}, 
+                     {~r/cafes/, "cafe"}, 
+                     {~r/children/, "child"}, 
+                     {~r/cookies/, "cookie"}, 
+                     {~r/corpuses/, "corpus"}, 
+                     {~r/cows/, "cow"}, 
+                     {~r/ganglions/, "ganglion"}, 
+                     {~r/genies/, "genie"}, 
+                     {~r/genera/, "genus"}, 
+                     {~r/graffiti/, "graffito"}, 
+                     {~r/hoofs/, "hoof"}, 
+                     {~r/loaves/, "loaf"}, 
+                     {~r/men/, "man"}, 
+                     {~r/monies/, "money"}, 
+                     {~r/mongooses/, "mongoose"}, 
+                     {~r/moves/, "move"}, 
+                     {~r/mythoi/, "mythos"}, 
+                     {~r/niches/, "niche"}, 
+                     {~r/numina/, "numen"}, 
+                     {~r/occiputs/, "occiput"}, 
+                     {~r/octopuses/, "octopus"}, 
+                     {~r/opuses/, "opus"}, 
+                     {~r/oxen/, "ox"}, 
+                     {~r/penises/, "penis"}, 
+                     {~r/people/, "person"}, 
+                     {~r/sexes/, "sex"}, 
+                     {~r/soliloquies/, "soliloquy"}, 
+                     {~r/testes/, "testis"}, 
+                     {~r/trilbys/, "trilby"}, 
+                     {~r/turfs/, "turf"}, 
+                     {~r/potatoes/, "potato"},
+                     {~r/heroes/, "hero"}, 
+                     {~r/teeth/, "tooth"}, 
+                     {~r/geese/, "goose"}, 
+                     {~r/feet/, "foot"}
+                    ]
 
+    def irregular(:plural) do
+        return @plural_irregular_regexps
+    end
+   
+    def irregular(:singular) do
+        return @singular_irregular_regexps
+    end
 
     def regular(:plural) do 
-        return @plural_regular_regexp    
+        return @plural_regular_regexps    
     end
 
     def regular(:singular) do 
-        return @singular_regular_regexp
+        return @singular_regular_regexps
     end
     
                     
