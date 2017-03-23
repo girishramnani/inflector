@@ -1,5 +1,109 @@
 defmodule Inflector.Regexps do
     
+    @singular_uninflected [
+                         ~r/.*[nrlm]ese/, 
+                         ~r/.*deer/, 
+                         ~r/.*fish/, 
+                         ~r/.*measles/, 
+                         ~r/.*ois/, 
+                         ~r/.*pox/,
+                         ~r/.*sheep/,
+                         ~r/.*ss/ 
+
+    ]
+
+
+    @plural_uninflected [
+                         ~r/.*[nrlm]ese/, 
+                         ~r/.*deer/, 
+                         ~r/.*fish/, 
+                         ~r/.*measles/, 
+                         ~r/.*ois/, 
+                         ~r/.*pox/,
+                         ~r/.*sheep/, 
+                         ~r/people/
+                        ]
+
+    @uninflected ~r/(Amoyese
+                    |bison
+                    |Borghese
+                    |bream
+                    |breeches
+                    |britches
+                    |buffalo
+                    |cantus
+                    |carp
+                    |chassis
+                    |clippers
+                    |cod
+                    |coitus
+                    |Congoese
+                    |contretemps
+                    |corps
+                    |debris
+                    |diabetes
+                    |djinn
+                    |eland
+                    |elk
+                    |equipment
+                    |Faroese
+                    |flounder
+                    |Foochowese
+                    |gallows
+                    |Genevese
+                    |Genoese
+                    |Gilbertese
+                    |graffiti
+                    |headquarters
+                    |herpes
+                    |hijinks
+                    |Hottentotese
+                    |information
+                    |innings
+                    |jackanapes
+                    |Kiplingese
+                    |Kongoese
+                    |Lucchese
+                    |mackerel
+                    |Maltese
+                    |.*?media
+                    |mews
+                    |moose
+                    |mumps
+                    |Nankingese
+                    |news
+                    |nexus
+                    |Niasese
+                    |Pekingese
+                    |Piedmontese
+                    |pincers
+                    |Pistoiese
+                    |pliers
+                    |Portuguese
+                    |proceedings
+                    |rabies
+                    |rice
+                    |rhinoceros
+                    |salmon
+                    |Sarawakese
+                    |scissors
+                    |sea[- ]bass
+                    |series
+                    |Shavese
+                    |shears
+                    |siemens
+                    |species
+                    |swine
+                    |testes
+                    |trousers
+                    |trout
+                    |tuna
+                    |Vermontese
+                    |Wenchowese
+                    |whiting
+                    |wildebeest
+                    |Yengeese)/mix
+
 
     @plural_regular_regexps [
                      {~r/(?i)(s)tatus$/, "${1}${2}tatuses"},
@@ -147,20 +251,32 @@ defmodule Inflector.Regexps do
                     ]
 
     def irregular(:plural) do
-        return @plural_irregular_regexps
+        @plural_irregular_regexps
     end
    
     def irregular(:singular) do
-        return @singular_irregular_regexps
+        @singular_irregular_regexps
     end
 
     def regular(:plural) do 
-        return @plural_regular_regexps    
+        @plural_regular_regexps    
     end
 
     def regular(:singular) do 
-        return @singular_regular_regexps
+        @singular_regular_regexps
     end
+
+    def uninflected(:singular) do
+        @singular_uninflected
+    end
+
+     def uninflected(:plural) do
+        @plural_uninflected
+    end
+
+     def uninflected() do
+         @uninflected
+     end
     
                     
 
