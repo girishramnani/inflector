@@ -9,3 +9,12 @@ Inflector pluralizes and singularizes English nouns.
 - [ ] code commenting
 - [ ] tests
 - [ ] Publishing to hex.pm
+
+# Credits
+
++ CakePHP's inflector
++ degex/inflector
+
+# License
+
+MIT
