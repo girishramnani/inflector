@@ -4,7 +4,7 @@ defmodule Inflector do
   """
 
   def pluralize(word) when is_binary(word) do
-
+    Inflector.Regexps.pluralize(word)
   end
 
   def pluralize(_) do    
@@ -12,7 +12,7 @@ defmodule Inflector do
   end
 
   def singularize(word) when is_binary(word) do
-    
+    Inflector.Regexps.singularize(word)
   end 
 
   def singularize(_) do

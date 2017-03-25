@@ -105,30 +105,27 @@ defmodule Inflector.Regexps do
                     |Yengeese)/mix
 
 
-    @plural_regular_regexps [
-                     {~r/(?i)(s)tatus$/, "${1}${2}tatuses"},
-                     {~r/(?i)(quiz)$/, "${1}zes"},
-                     {~r/(?i)^(ox)$/, "${1}${2}en"},
-                     {~r/(?i)([m|l])ouse$/, "${1}ice"},
-                     {~r/(?i)(matr|vert|ind)(ix|ex)$/, "${1}ices"},
-                     {~r/(?i)(x|ch|ss|sh)$/, "${1}es"},
-                     {~r/(?i)([^aeiouy]|qu)y$/, "${1}ies"},
-                     {~r/(?i)(hive)$/, "$1s"}, 
-                     {~r/(?i)(?:([^f])fe|([lre])f)$/, "${1}${2}ves"},
+    @plural_regexps [
+                     {~r/(?i)(s)tatus$/, "\\g{1}\\g{2}tatuses"},
+                     {~r/(?i)(quiz)$/, "\\g{1}zes"},
+                     {~r/(?i)^(ox)$/, "\\g{1}\\g{2}en"},
+                     {~r/(?i)([m|l])ouse$/, "\\g{1}ice"},
+                     {~r/(?i)(matr|vert|ind)(ix|ex)$/, "\\g{1}ices"},
+                     {~r/(?i)(x|ch|ss|sh)$/, "\\g{1}es"},
+                     {~r/(?i)([^aeiouy]|qu)y$/, "\\g{1}ies"},
+                     {~r/(?i)(hive)$/, "\\1s"}, 
+                     {~r/(?i)(?:([^f])fe|([lre])f)$/, "\\g{1}\\g{2}ves"},
                      {~r/(?i)sis$/, "ses"}, 
-                     {~r/(?i)([ti])um$/, "${1}a"},
-                     {~r/(?i)(p)erson$/, "${1}eople"}, {~r/(?i)(m)an$/, "${1}en"},
-                     {~r/(?i)(c)hild$/, "${1}hildren"}, {~r/(?i)(buffal|tomat)o$/, "${1}${2}oes"},
-                     {~r/(?i)(alumn|bacill|cact|foc|fung|nucle|radi|stimul|syllab|termin|vir)us$/,"${1}i"},          
+                     {~r/(?i)([ti])um$/, "\\g{1}a"},
+                     {~r/(?i)(p)erson$/, "\\g{1}eople"}, {~r/(?i)(m)an$/, "\\g{1}en"},
+                     {~r/(?i)(c)hild$/, "\\g{1}hildren"}, {~r/(?i)(buffal|tomat)o$/, "\\g{1}\\g{2}oes"},
+                     {~r/(?i)(alumn|bacill|cact|foc|fung|nucle|radi|stimul|syllab|termin|vir)us$/,"\\g{1}i"},          
                      {~r/(?i)us$/, "uses"}, 
-                     {~r/(?i)(alias)$/, "${1}es"},
-                     {~r/(?i)(ax|cris|test)is$/, "${1}es"}, 
+                     {~r/(?i)(alias)$/, "\\g{1}es"},
+                     {~r/(?i)(ax|cris|test)is$/, "\\g{1}es"}, 
                      {~r/s$/, "s"}, 
                      {~r/^$/, ""},
-                     {~r/$/, "s"}
-                    ]
-
-    @plural_irregular_regexps [
+                     {~r/$/, "s"},
                      {~r/atlas/, "atlases"}, 
                      {~r/beef/, "beefs"}, 
                      {~r/brother/, "brothers"},
@@ -170,44 +167,41 @@ defmodule Inflector.Regexps do
 
 
     
-    @singular_regular_regexps [
-                     {~r/(?i)(s)tatuses$/, "${1}${2}tatus"},
-                     {~r/(?i)^(.*)(menu)s$/, "${1}${2}"},
-                     {~r/(?i)(quiz)zes$/, "$1"},
-                     {~r/(?i)(matr)ices$/, "${1}ix"},
-                     {~r/(?i)(vert|ind)ices$/, "${1}ex"},
-                     {~r/(?i)^(ox)en/, "$1"},
-                     {~r/(?i)(alias)(es)*$/, "$1"},
-                     {~r/(?i)(alumn|bacill|cact|foc|fung|nucle|radi|stimul|syllab|termin|viri?)i$/,"${1}us"},
-                     {~r/(?i)([ftw]ax)es/, "$1"},
-                     {~r/(?i)(cris|ax|test)es$/, "${1}is"},
-                     {~r/(?i)(shoe|slave)s$/, "$1"}, 
-                     {~r/(?i)(o)es$/, "$1"}, 
+    @singular_regexps [
+                     {~r/(?i)(s)tatuses$/, "\\g{1}\\g{2}tatus"},
+                     {~r/(?i)^(.*)(menu)s$/, "\\g{1}\\g{2}"},
+                     {~r/(?i)(quiz)zes$/, "\\1"},
+                     {~r/(?i)(matr)ices$/, "\\g{1}ix"},
+                     {~r/(?i)(vert|ind)ices$/, "\\g{1}ex"},
+                     {~r/(?i)^(ox)en/, "\\1"},
+                     {~r/(?i)(alias)(es)*$/, "\\1"},
+                     {~r/(?i)(alumn|bacill|cact|foc|fung|nucle|radi|stimul|syllab|termin|viri?)i$/,"\\g{1}us"},
+                     {~r/(?i)([ftw]ax)es/, "\\1"},
+                     {~r/(?i)(cris|ax|test)es$/, "\\g{1}is"},
+                     {~r/(?i)(shoe|slave)s$/, "\\1"}, 
+                     {~r/(?i)(o)es$/, "\\1"}, 
                      {~r/ouses$/, "ouse"},
-                     {~r/([^a])uses$/, "${1}us"}, 
-                     {~r/(?i)([m|l])ice$/, "${1}ouse"},
-                     {~r/(?i)(x|ch|ss|sh)es$/, "$1"}, 
-                     {~r/(?i)(m)ovies$/, "${1}${2}ovie"},
-                     {~r/(?i)(s)eries$/, "${1}${2}eries"}, 
-                     {~r/(?i)([^aeiouy]|qu)ies$/, "${1}y"},
-                     {~r/(?i)(tive)s$/, "$1"}, 
-                     {~r/(?i)([lre])ves$/, "${1}f"},
-                     {~r/(?i)([^fo])ves$/, "${1}fe"}, 
-                     {~r/(?i)(hive)s$/, "$1"},
-                     {~r/(?i)(drive)s$/, "$1"}, 
-                     {~r/(?i)(^analy)ses$/, "${1}sis"},
-                     {~r/(?i)(analy|diagno|^ba|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/,"${1}${2}sis"}, 
-                     {~r/(?i)([ti])a$/, "${1}um"},
-                     {~r/(?i)(p)eople$/, "${1}${2}erson"}, 
-                     {~r/(?i)(m)en$/, "${1}an"},
-                     {~r/(?i)(c)hildren$/, "${1}${2}hild"}, 
-                     {~r/(?i)(n)ews$/, "${1}${2}ews"},
+                     {~r/([^a])uses$/, "\\g{1}us"}, 
+                     {~r/(?i)([m|l])ice$/, "\\g{1}ouse"},
+                     {~r/(?i)(x|ch|ss|sh)es$/, "\\1"}, 
+                     {~r/(?i)(m)ovies$/, "\\g{1}\\g{2}ovie"},
+                     {~r/(?i)(s)eries$/, "\\g{1}\\g{2}eries"}, 
+                     {~r/(?i)([^aeiouy]|qu)ies$/, "\\g{1}y"},
+                     {~r/(?i)(tive)s$/, "\\1"}, 
+                     {~r/(?i)([lre])ves$/, "\\g{1}f"},
+                     {~r/(?i)([^fo])ves$/, "\\g{1}fe"}, 
+                     {~r/(?i)(hive)s$/, "\\1"},
+                     {~r/(?i)(drive)s$/, "\\1"}, 
+                     {~r/(?i)(^analy)ses$/, "\\g{1}sis"},
+                     {~r/(?i)(analy|diagno|^ba|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/,"\\g{1}\\g{2}sis"}, 
+                     {~r/(?i)([ti])a$/, "\\g{1}um"},
+                     {~r/(?i)(p)eople$/, "\\g{1}\\g{2}erson"}, 
+                     {~r/(?i)(m)en$/, "\\g{1}an"},
+                     {~r/(?i)(c)hildren$/, "\\g{1}\\g{2}hild"}, 
+                     {~r/(?i)(n)ews$/, "\\g{1}\\g{2}ews"},
                      {~r/eaus$/, "eau"}, 
-                     {~r/^(.*us)$/, "$1"}, 
-                     {~r/(?i)s$/, ""}
-                    ]
-    
-    @singular_irregular_regexps [
+                     {~r/^(.*us)$/, "\\1"}, 
+                     {~r/(?i)s$/, ""},
                      {~r/foes/, "foe"}, 
                      {~r/waves/, "wave"}, 
                      {~r/curves/, "curve"}, 
@@ -249,34 +243,50 @@ defmodule Inflector.Regexps do
                      {~r/geese/, "goose"}, 
                      {~r/feet/, "foot"}
                     ]
+    
 
-    def irregular(:plural) do
-        @plural_irregular_regexps
-    end
-   
-    def irregular(:singular) do
-        @singular_irregular_regexps
+
+    def in_uniflectable?(word,:singular) do
+        in_uniflect?(word,@singular_uninflected) || Regex.match?(@uninflected,word)
     end
 
-    def regular(:plural) do 
-        @plural_regular_regexps    
+
+    def in_uniflectable?(word,:plural) do
+        in_uniflect?(word,@plural_uninflected) || Regex.match?(@uninflected,word)
     end
 
-    def regular(:singular) do 
-        @singular_regular_regexps
+    defp in_uniflect?(word,set) do
+        case Enum.find(set,fn (regex) -> Regex.match?(regex,word)  end) do
+            nil -> false
+            _ -> true
+        end
     end
 
-    def uninflected(:singular) do
-        @singular_uninflected
+    def pluralize(word) do
+        if in_uniflectable?(word,:plural) do
+            word
+        else
+            find_replace(word,@plural_regexps)
+        end
+        
     end
 
-     def uninflected(:plural) do
-        @plural_uninflected
+    def singularize(word) do
+        if in_uniflectable?(word,:singular) do
+            word
+        else
+            find_replace(word,@singular_regexps)                        
+        end
     end
 
-     def uninflected() do
-         @uninflected
-     end
+    defp find_replace(word,set) do
+        # Always will match to a pattern        
+        {regex,repl} = Enum.find(set,fn {regex,_} -> Regex.match?(regex,word) end ) 
+        Regex.replace(regex,word,repl)
+    end
+    
+
+
     
                     
 
