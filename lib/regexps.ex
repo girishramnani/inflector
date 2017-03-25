@@ -280,7 +280,8 @@ defmodule Inflector.Regexps do
     end
 
     defp find_replace(word,set) do
-        # Always will match to a pattern        
+        # Always will match to a pattern unless singular passed to singularize and plural
+        # passed to pluralize       
         {regex,repl} = Enum.find(set,fn {regex,_} -> Regex.match?(regex,word) end ) 
         Regex.replace(regex,word,repl)
     end

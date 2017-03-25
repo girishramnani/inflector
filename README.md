@@ -2,13 +2,10 @@
 
 Inflector pluralizes and singularizes English nouns.
 
-## Installation
+# Todo
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `inflector` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:inflector, "~> 0.1.0"}]
-end
-```
+- [ ] Implement caching
+- [ ] Error handling
+- [ ] code commenting
+- [ ] tests
+- [ ] Publishing to hex.pm
