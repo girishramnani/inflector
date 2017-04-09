@@ -1,4 +1,7 @@
 # Inflectorex
+[![Build Status](https://travis-ci.org/girishramnani/inflector.svg?branch=master)](https://travis-ci.org/girishramnani/inflector)
+
+
 
 Inflectorex pluralizes and singularizes English nouns.
 
