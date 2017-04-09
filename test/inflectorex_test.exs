@@ -61,7 +61,7 @@ defmodule InflectorTest do
 
 
   test "pluralize some words" do
-    assert Enum.all?(@pluralize_inputs,fn {input,output} -> Inflector.pluralize(input) == output end) == true
+    assert Enum.all?(@pluralize_inputs,fn {input,output} -> Inflectorex.pluralize(input) == output end) == true
   end
 
 
@@ -143,7 +143,7 @@ defmodule InflectorTest do
 
 
  test "singularize some words" do
-    assert Enum.all?(@singularize_inputs,fn {input,output} -> Inflector.singularize(input) == output end) == true
+    assert Enum.all?(@singularize_inputs,fn {input,output} -> Inflectorex.singularize(input) == output end) == true
   end
 
 

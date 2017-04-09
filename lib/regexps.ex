@@ -1,4 +1,4 @@
-defmodule Inflector.Regexps do
+defmodule Inflectorex.Regexps do
     
     @singular_uninflected [
                          ~r/(?i)(^(?:.*[nrlm]ese))$/, 

@@ -1,13 +1,13 @@
-# Inflector
+# Inflectorex
 
-Inflector pluralizes and singularizes English nouns.
+Inflectorex pluralizes and singularizes English nouns.
 
 # Todo
 
 - [ ] Implement caching
-- [ ] Error handling
+- [x] Error handling
 - [ ] code commenting
-- [ ] tests
+- [x] tests
 - [ ] Publishing to hex.pm
 
 # Credits

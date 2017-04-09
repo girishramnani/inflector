@@ -1,8 +1,8 @@
-defmodule Inflector.Mixfile do
+defmodule Inflectorex.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :inflector,
+    [app: :inflectorex,
      version: "0.1.0",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
@@ -13,33 +13,27 @@ defmodule Inflector.Mixfile do
     ]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
   def application do
-    # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger]]
   end
 
   defp deps do
-    []
+    [{:ex_doc, ">= 0.0.0", only: :dev}]
   end
-
 
   defp description do 
     """
-    Singularize and pluralize english words.
+    Singularize and pluralize english nouns.
     """
   end
 
   defp package do
     [
-     name: :inflector,
-     files: ["lib", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
-     maintainers: ["Eric Meadows-Jönsson", "José Valim"],
-     licenses: ["Apache 2.0"],
-     links: %{"GitHub" => "https://github.com/ericmj/postgrex",
-              "Docs" => "http://ericmj.github.io/postgrex/"}
+     name: :inflectorex,
+     files: ["lib", "mix.exs", "README*", "LICENSE*"],
+     maintainers: ["Girish Ramnani"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/girishramnani/inflector" }
     ]
   end
 end

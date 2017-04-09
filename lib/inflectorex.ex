@@ -1,10 +1,10 @@
-defmodule Inflector do
+defmodule Inflectorex do
   @moduledoc """
-  Documentation for Inflector.
+  Documentation for Inflectorex.
   """
 
   def pluralize(word) when is_binary(word) do
-    Inflector.Regexps.pluralize(word)
+    Inflectorex.Regexps.pluralize(word)
   end
 
   def pluralize(_) do    
@@ -12,7 +12,7 @@ defmodule Inflector do
   end
 
   def singularize(word) when is_binary(word) do
-    Inflector.Regexps.singularize(word)
+    Inflectorex.Regexps.singularize(word)
   end 
 
   def singularize(_) do
