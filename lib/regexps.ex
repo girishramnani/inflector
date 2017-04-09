@@ -1,148 +1,147 @@
 defmodule Inflector.Regexps do
     
     @singular_uninflected [
-                         ~r/.*[nrlm]ese/, 
-                         ~r/.*deer/, 
-                         ~r/.*fish/, 
-                         ~r/.*measles/, 
-                         ~r/.*ois/, 
-                         ~r/.*pox/,
-                         ~r/.*sheep/,
-                         ~r/.*ss/ 
-
+                         ~r/(?i)(^(?:.*[nrlm]ese))$/, 
+                         ~r/(?i)(^(?:.*deer))$/, 
+                         ~r/(?i)(^(?:.*fish))$/, 
+                         ~r/(?i)(^(?:.*measles))$/, 
+                         ~r/(?i)(^(?:.*ois))$/, 
+                         ~r/(?i)(^(?:.*pox))$/,
+                         ~r/(?i)(^(?:.*sheep))$/,
+                         ~r/(?i)(^(?:.*ss))$/ 
     ]
 
 
     @plural_uninflected [
-                         ~r/.*[nrlm]ese/, 
-                         ~r/.*deer/, 
-                         ~r/.*fish/, 
-                         ~r/.*measles/, 
-                         ~r/.*ois/, 
-                         ~r/.*pox/,
-                         ~r/.*sheep/, 
-                         ~r/people/
+                         ~r/(?i)(^(?:.*[nrlm]ese))$/, 
+                         ~r/(?i)(^(?:.*deer))$/, 
+                         ~r/(?i)(^(?:.*fish))$/, 
+                         ~r/(?i)(^(?:.*measles))$/, 
+                         ~r/(?i)(^(?:.*ois))$/, 
+                         ~r/(?i)(^(?:.*pox))$/,
+                         ~r/(?i)(^(?:.*sheep))$/, 
+                         ~r/(?i)(^(?:people))$/
                         ]
 
-    @uninflected ~r/(Amoyese
-                    |bison
-                    |Borghese
-                    |bream
-                    |breeches
-                    |britches
-                    |buffalo
-                    |cantus
-                    |carp
-                    |chassis
-                    |clippers
-                    |cod
-                    |coitus
-                    |Congoese
-                    |contretemps
-                    |corps
-                    |debris
-                    |diabetes
-                    |djinn
-                    |eland
-                    |elk
-                    |equipment
-                    |Faroese
-                    |flounder
-                    |Foochowese
-                    |gallows
-                    |Genevese
-                    |Genoese
-                    |Gilbertese
-                    |graffiti
-                    |headquarters
-                    |herpes
-                    |hijinks
-                    |Hottentotese
-                    |information
-                    |innings
-                    |jackanapes
-                    |Kiplingese
-                    |Kongoese
-                    |Lucchese
-                    |mackerel
-                    |Maltese
-                    |.*?media
-                    |mews
-                    |moose
-                    |mumps
-                    |Nankingese
-                    |news
-                    |nexus
-                    |Niasese
-                    |Pekingese
-                    |Piedmontese
-                    |pincers
-                    |Pistoiese
-                    |pliers
-                    |Portuguese
-                    |proceedings
-                    |rabies
-                    |rice
-                    |rhinoceros
-                    |salmon
-                    |Sarawakese
-                    |scissors
-                    |sea[- ]bass
-                    |series
-                    |Shavese
-                    |shears
-                    |siemens
-                    |species
-                    |swine
-                    |testes
-                    |trousers
-                    |trout
-                    |tuna
-                    |Vermontese
-                    |Wenchowese
-                    |whiting
-                    |wildebeest
-                    |Yengeese)/mix
+    @uninflected ~r/((?i)(^(?:Amoyese))$
+                    |(?i)(^(?:bison))$
+                    |(?i)(^(?:Borghese))$
+                    |(?i)(^(?:bream))$
+                    |(?i)(^(?:breeches))$
+                    |(?i)(^(?:britches))$
+                    |(?i)(^(?:buffalo))$
+                    |(?i)(^(?:cantus))$
+                    |(?i)(^(?:carp))$
+                    |(?i)(^(?:chassis))$
+                    |(?i)(^(?:clippers))$
+                    |(?i)(^(?:cod))$
+                    |(?i)(^(?:coitus))$
+                    |(?i)(^(?:Congoese))$
+                    |(?i)(^(?:contretemps))$
+                    |(?i)(^(?:corps))$
+                    |(?i)(^(?:debris))$
+                    |(?i)(^(?:diabetes))$
+                    |(?i)(^(?:djinn))$
+                    |(?i)(^(?:eland))$
+                    |(?i)(^(?:elk))$
+                    |(?i)(^(?:equipment))$
+                    |(?i)(^(?:Faroese))$
+                    |(?i)(^(?:flounder))$
+                    |(?i)(^(?:Foochowese))$
+                    |(?i)(^(?:gallows))$
+                    |(?i)(^(?:Genevese))$
+                    |(?i)(^(?:Genoese))$
+                    |(?i)(^(?:Gilbertese))$
+                    |(?i)(^(?:graffiti))$
+                    |(?i)(^(?:headquarters))$
+                    |(?i)(^(?:herpes))$
+                    |(?i)(^(?:hijinks))$
+                    |(?i)(^(?:Hottentotese))$
+                    |(?i)(^(?:information))$
+                    |(?i)(^(?:innings))$
+                    |(?i)(^(?:jackanapes))$
+                    |(?i)(^(?:Kiplingese))$
+                    |(?i)(^(?:Kongoese))$
+                    |(?i)(^(?:Lucchese))$
+                    |(?i)(^(?:mackerel))$
+                    |(?i)(^(?:Maltese))$
+                    |(?i)(^(?:.*?media))$
+                    |(?i)(^(?:mews))$
+                    |(?i)(^(?:moose))$
+                    |(?i)(^(?:mumps))$
+                    |(?i)(^(?:Nankingese))$
+                    |(?i)(^(?:news))$
+                    |(?i)(^(?:nexus))$
+                    |(?i)(^(?:Niasese))$
+                    |(?i)(^(?:Pekingese))$
+                    |(?i)(^(?:Piedmontese))$
+                    |(?i)(^(?:pincers))$
+                    |(?i)(^(?:Pistoiese))$
+                    |(?i)(^(?:pliers))$
+                    |(?i)(^(?:Portuguese))$
+                    |(?i)(^(?:proceedings))$
+                    |(?i)(^(?:rabies))$
+                    |(?i)(^(?:rice))$
+                    |(?i)(^(?:rhinoceros))$
+                    |(?i)(^(?:salmon))$
+                    |(?i)(^(?:Sarawakese))$
+                    |(?i)(^(?:scissors))$
+                    |(?i)(^(?:sea[- ]bass))$
+                    |(?i)(^(?:series))$
+                    |(?i)(^(?:Shavese))$
+                    |(?i)(^(?:shears))$
+                    |(?i)(^(?:siemens))$
+                    |(?i)(^(?:species))$
+                    |(?i)(^(?:swine))$
+                    |(?i)(^(?:testes))$
+                    |(?i)(^(?:trousers))$
+                    |(?i)(^(?:trout))$
+                    |(?i)(^(?:tuna))$
+                    |(?i)(^(?:Vermontese))$
+                    |(?i)(^(?:Wenchowese))$
+                    |(?i)(^(?:whiting))$
+                    |(?i)(^(?:wildebeest))$
+                    |(?i)(^(?:Yengeese))$)/mix
 
 
     @plural_regexps [
-        {~r/atlas/, "atlases"}, 
-                     {~r/beef/, "beefs"}, 
-                     {~r/brother/, "brothers"},
-                     {~r/cafe/, "cafes"}, 
-                     {~r/child/, "children"}, 
-                     {~r/cookie/, "cookies"},
-                     {~r/corpus/, "corpuses"}, 
-                     {~r/cow/, "cows"}, 
-                     {~r/ganglion/, "ganglions"},
-                     {~r/genie/, "genies"}, 
-                     {~r/genus/, "genera"}, 
-                     {~r/graffito/, "graffiti"}, 
-                     {~r/hoof/, "hoofs"}, 
-                     {~r/loaf/, "loaves"}, 
-                     {~r/man/, "men"},
-                     {~r/money/, "monies"}, 
-                     {~r/mongoose/, "mongooses"}, 
-                     {~r/move/, "moves"}, 
-                     {~r/mythos/, "mythoi"}, 
-                     {~r/niche/, "niches"}, 
-                     {~r/numen/, "numina"},
-                     {~r/occiput/, "occiputs"}, 
-                     {~r/octopus/, "octopuses"}, 
-                     {~r/opus/, "opuses"}, 
-                     {~r/ox/, "oxen"}, 
-                     {~r/penis/, "penises"}, 
-                     {~r/person/, "people"}, 
-                     {~r/sex/, "sexes"}, 
-                     {~r/soliloquy/, "soliloquies"}, 
-                     {~r/testis/, "testes"}, 
-                     {~r/trilby/, "trilbys"}, 
-                     {~r/turf/, "turfs"}, 
-                     {~r/potato/, "potatoes"}, 
-                     {~r/hero/, "heroes"}, 
-                     {~r/tooth/, "teeth"}, 
-                     {~r/goose/, "geese"}, 
-                     {~r/foot/, "feet"}, 
+                     {~r/(?i)(.*)\b((?:atlas))$/, "atlases"}, 
+                     {~r/(?i)(.*)\b((?:beef))$/, "beefs"}, 
+                     {~r/(?i)(.*)\b((?:brother))$/, "brothers"},
+                     {~r/(?i)(.*)\b((?:cafe))$/, "cafes"}, 
+                     {~r/(?i)(.*)\b((?:child))$/, "children"}, 
+                     {~r/(?i)(.*)\b((?:cookie))$/, "cookies"},
+                     {~r/(?i)(.*)\b((?:corpus))$/, "corpuses"}, 
+                     {~r/(?i)(.*)\b((?:cow))$/, "cows"}, 
+                     {~r/(?i)(.*)\b((?:ganglion))$/, "ganglions"},
+                     {~r/(?i)(.*)\b((?:genie))$/, "genies"}, 
+                     {~r/(?i)(.*)\b((?:genus))$/, "genera"}, 
+                     {~r/(?i)(.*)\b((?:graffito))$/, "graffiti"}, 
+                     {~r/(?i)(.*)\b((?:hoof))$/, "hoofs"}, 
+                     {~r/(?i)(.*)\b((?:loaf))$/, "loaves"}, 
+                     {~r/(?i)(.*)\b((?:man))$/, "men"},
+                     {~r/(?i)(.*)\b((?:money))$/, "monies"}, 
+                     {~r/(?i)(.*)\b((?:mongoose))$/, "mongooses"}, 
+                     {~r/(?i)(.*)\b((?:move))$/, "moves"}, 
+                     {~r/(?i)(.*)\b((?:mythos))$/, "mythoi"}, 
+                     {~r/(?i)(.*)\b((?:niche))$/, "niches"}, 
+                     {~r/(?i)(.*)\b((?:numen))$/, "numina"},
+                     {~r/(?i)(.*)\b((?:occiput))$/, "occiputs"}, 
+                     {~r/(?i)(.*)\b((?:octopus))$/, "octopuses"}, 
+                     {~r/(?i)(.*)\b((?:opus))$/, "opuses"}, 
+                     {~r/(?i)(.*)\b((?:ox))$/, "oxen"}, 
+                     {~r/(?i)(.*)\b((?:penis))$/, "penises"}, 
+                     {~r/(?i)(.*)\b((?:person))$/, "people"}, 
+                     {~r/(?i)(.*)\b((?:sex))$/, "sexes"}, 
+                     {~r/(?i)(.*)\b((?:soliloquy))$/, "soliloquies"}, 
+                     {~r/(?i)(.*)\b((?:testis))$/, "testes"}, 
+                     {~r/(?i)(.*)\b((?:trilby))$/, "trilbys"}, 
+                     {~r/(?i)(.*)\b((?:turf))$/, "turfs"}, 
+                     {~r/(?i)(.*)\b((?:potato))$/, "potatoes"}, 
+                     {~r/(?i)(.*)\b((?:hero))$/, "heroes"}, 
+                     {~r/(?i)(.*)\b((?:tooth))$/, "teeth"}, 
+                     {~r/(?i)(.*)\b((?:goose))$/, "geese"}, 
+                     {~r/(?i)(.*)\b((?:foot))$/, "feet"}, 
                      {~r/(?i)(s)tatus$/, "\\g{1}\\g{2}tatuses"},
                      {~r/(?i)(quiz)$/, "\\g{1}zes"},
                      {~r/(?i)^(ox)$/, "\\g{1}\\g{2}en"},
@@ -168,46 +167,47 @@ defmodule Inflector.Regexps do
 
     
     @singular_regexps [
-         {~r/foes/, "foe"}, 
-                     {~r/waves/, "wave"}, 
-                     {~r/curves/, "curve"}, 
-                     {~r/atlases/, "atlas"}, 
-                     {~r/beefs/, "beef"}, 
-                     {~r/brothers/, "brother"}, 
-                     {~r/cafes/, "cafe"}, 
-                     {~r/children/, "child"}, 
-                     {~r/cookies/, "cookie"}, 
-                     {~r/corpuses/, "corpus"}, 
-                     {~r/cows/, "cow"}, 
-                     {~r/ganglions/, "ganglion"}, 
-                     {~r/genies/, "genie"}, 
-                     {~r/genera/, "genus"}, 
-                     {~r/graffiti/, "graffito"}, 
-                     {~r/hoofs/, "hoof"}, 
-                     {~r/loaves/, "loaf"}, 
-                     {~r/men/, "man"}, 
-                     {~r/monies/, "money"}, 
-                     {~r/mongooses/, "mongoose"}, 
-                     {~r/moves/, "move"}, 
-                     {~r/mythoi/, "mythos"}, 
-                     {~r/niches/, "niche"}, 
-                     {~r/numina/, "numen"}, 
-                     {~r/occiputs/, "occiput"}, 
-                     {~r/octopuses/, "octopus"}, 
-                     {~r/opuses/, "opus"}, 
-                     {~r/oxen/, "ox"}, 
-                     {~r/penises/, "penis"}, 
-                     {~r/people/, "person"}, 
-                     {~r/sexes/, "sex"}, 
-                     {~r/soliloquies/, "soliloquy"}, 
-                     {~r/testes/, "testis"}, 
-                     {~r/trilbys/, "trilby"}, 
-                     {~r/turfs/, "turf"}, 
-                     {~r/potatoes/, "potato"},
-                     {~r/heroes/, "hero"}, 
-                     {~r/teeth/, "tooth"}, 
-                     {~r/geese/, "goose"}, 
-                     {~r/feet/, "foot"},
+                     {~r/(?i)(.*)\b((?:foes))$/, "foe"}, 
+                     {~r/(?i)(.*)\b((?:waves))$/, "wave"}, 
+                     {~r/(?i)(.*)\b((?:curves))$/, "curve"}, 
+                     {~r/(?i)(.*)\b((?:atlases))$/, "atlas"}, 
+                     {~r/(?i)(.*)\b((?:beefs))$/, "beef"}, 
+                     {~r/(?i)(.*)\b((?:brothers))$/, "brother"}, 
+                     {~r/(?i)(.*)\b((?:cafes))$/, "cafe"}, 
+                     {~r/(?i)(.*)\b((?:children))$/, "child"}, 
+                     {~r/(?i)(.*)\b((?:cookies))$/, "cookie"}, 
+                     {~r/(?i)(.*)\b((?:corpuses))$/, "corpus"}, 
+                     {~r/(?i)(.*)\b((?:cows))$/, "cow"}, 
+                     {~r/(?i)(.*)\b((?:ganglions))$/, "ganglion"}, 
+                     {~r/(?i)(.*)\b((?:genies))$/, "genie"}, 
+                     {~r/(?i)(.*)\b((?:genera))$/, "genus"}, 
+                     {~r/(?i)(.*)\b((?:graffiti))$/, "graffito"}, 
+                     {~r/(?i)(.*)\b((?:hoofs))$/, "hoof"}, 
+                     {~r/(?i)(.*)\b((?:loaves))$/, "loaf"}, 
+                     {~r/(?i)(.*)\b((?:men))$/, "man"}, 
+                     {~r/(?i)(.*)\b((?:monies))$/, "money"}, 
+                     {~r/(?i)(.*)\b((?:mongooses))$/, "mongoose"}, 
+                     {~r/(?i)(.*)\b((?:moves))$/, "move"}, 
+                     {~r/(?i)(.*)\b((?:mythoi))$/, "mythos"}, 
+                     {~r/(?i)(.*)\b((?:niches))$/, "niche"}, 
+                     {~r/(?i)(.*)\b((?:numina))$/, "numen"}, 
+                     {~r/(?i)(.*)\b((?:occiputs))$/, "occiput"}, 
+                     {~r/(?i)(.*)\b((?:octopuses))$/, "octopus"}, 
+                     {~r/(?i)(.*)\b((?:opuses))$/, "opus"}, 
+                     {~r/(?i)(.*)\b((?:oxen))$/, "ox"}, 
+                     {~r/(?i)(.*)\b((?:penises))$/, "penis"}, 
+                     {~r/(?i)(.*)\b((?:people))$/, "person"}, 
+                     {~r/(?i)(.*)\b((?:sexes))$/, "sex"}, 
+                     {~r/(?i)(.*)\b((?:soliloquies))$/, "soliloquy"}, 
+                     {~r/(?i)(.*)\b((?:testes))$/, "testis"}, 
+                     {~r/(?i)(.*)\b((?:trilbys))$/, "trilby"}, 
+                     {~r/(?i)(.*)\b((?:turfs))$/, "turf"}, 
+                     {~r/(?i)(.*)\b((?:potatoes))$/, "potato"},
+                     {~r/(?i)(.*)\b((?:heroes))$/, "hero"}, 
+                     {~r/(?i)(.*)\b((?:teeth))$/, "tooth"}, 
+                     {~r/(?i)(.*)\b((?:geese))$/, "goose"}, 
+                     {~r/(?i)(.*)\b((?:feet))$/, "foot"}, 
+                     {~r/eaus$/, "eau"},
                      {~r/(?i)(s)tatuses$/, "\\g{1}\\g{2}tatus"},
                      {~r/(?i)^(.*)(menu)s$/, "\\g{1}\\g{2}"},
                      {~r/(?i)(quiz)zes$/, "\\1"},
@@ -239,9 +239,8 @@ defmodule Inflector.Regexps do
                      {~r/(?i)(m)en$/, "\\g{1}an"},
                      {~r/(?i)(c)hildren$/, "\\g{1}\\g{2}hild"}, 
                      {~r/(?i)(n)ews$/, "\\g{1}\\g{2}ews"},
-                     {~r/eaus$/, "eau"}, 
                      {~r/^(.*us)$/, "\\1"}, 
-                     {~r/(?i)s$/, ""}
+                     {~r/(?i)s$/, ""},
                     ]
     
 
@@ -280,10 +279,13 @@ defmodule Inflector.Regexps do
     end
 
     defp find_replace(word,set) do
-        # Always will match to a pattern unless singular passed to singularize and plural
+        # will match to a pattern unless singular passed to singularize and plural
         # passed to pluralize       
-        {regex,repl} = Enum.find(set,fn {regex,_} -> Regex.match?(regex,word) end ) 
-        Regex.replace(regex,word,repl)
+        case Enum.find(set,nil,fn {regex,_} -> Regex.match?(regex,word) end ) do
+            nil -> word # can't try any further lets return the same thing
+            {regex,repl} -> Regex.replace(regex,word,repl)
+        end
+       
     end
     
 

@@ -2,7 +2,7 @@ defmodule InflectorTest do
   use ExUnit.Case
 
   @pluralize_inputs [
-  {"categoria", "categorias"},
+    {"categoria", "categorias"},
 	{"house", "houses"},
 	{"powerhouse", "powerhouses"},
 	{"Bus", "Buses"},
@@ -58,10 +58,93 @@ defmodule InflectorTest do
 	{"", ""}
   ]
 
+
+
   test "pluralize some words" do
     assert Enum.all?(@pluralize_inputs,fn {input,output} -> Inflector.pluralize(input) == output end) == true
   end
- 
+
+
+  @singularize_inputs [
+	{"categorias", "categoria"},
+	{"menus", "menu"},
+	{"news", "news"},
+	{"food_menus", "food_menu"},
+	{"Menus", "Menu"},
+	{"FoodMenus", "FoodMenu"},
+	{"houses", "house"},
+	{"powerhouses", "powerhouse"},
+	{"quizzes", "quiz"},
+	{"Buses", "Bus"},
+	{"buses", "bus"},
+	{"matrix_rows", "matrix_row"},
+	{"matrices", "matrix"},
+	{"vertices", "vertex"},
+	{"indices", "index"},
+	{"Aliases", "Alias"},
+	{"Alias", "Alias"},
+	{"Media", "Media"},
+	{"NodeMedia", "NodeMedia"},
+	{"alumni", "alumnus"},
+	{"bacilli", "bacillus"},
+	{"cacti", "cactus"},
+	{"foci", "focus"},
+	{"fungi", "fungus"},
+	{"nuclei", "nucleus"},
+	{"octopuses", "octopus"},
+	{"radii", "radius"},
+	{"stimuli", "stimulus"},
+	{"syllabi", "syllabus"},
+	{"termini", "terminus"},
+	{"viri", "virus"},
+	{"people", "person"},
+	{"gloves", "glove"},
+	{"doves", "dove"},
+	{"lives", "life"},
+	{"knives", "knife"},
+	{"wolves", "wolf"},
+	{"slaves", "slave"},
+	{"shelves", "shelf"},
+	{"taxis", "taxi"},
+	{"taxes", "tax"},
+	{"Taxes", "Tax"},
+	{"AwesomeTaxes", "AwesomeTax"},
+	{"faxes", "fax"},
+	{"waxes", "wax"},
+	{"niches", "niche"},
+	{"waves", "wave"},
+	{"bureaus", "bureau"},
+	{"genetic_analyses", "genetic_analysis"},
+	{"doctor_diagnoses", "doctor_diagnosis"},
+	{"parantheses", "paranthesis"},
+	{"Causes", "Cause"},
+	{"colossuses", "colossus"},
+	{"diagnoses", "diagnosis"},
+	{"bases", "basis"},
+	{"analyses", "analysis"},
+	{"curves", "curve"},
+	{"cafes", "cafe"},
+	{"roofs", "roof"},
+	{"foes", "foe"},
+	{"databases", "database"},
+	{"cookies", "cookie"},
+	{"thieves", "thief"},
+	{"potatoes", "potato"},
+	{"heroes", "hero"},
+	{"buffalos", "buffalo"},
+	{"babies", "baby"},
+	{"teeth", "tooth"},
+	{"geese", "goose"},
+	{"feet", "foot"},
+	{"objectives", "objective"},
+	{"species", "species"},
+	{"", ""},
+  ]
+
+
+ test "singularize some words" do
+    assert Enum.all?(@singularize_inputs,fn {input,output} -> Inflector.singularize(input) == output end) == true
+  end
 
 
 end
