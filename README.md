@@ -20,7 +20,7 @@ Inflectorex.pluralize("secret") # will give "secrets"
 
 # Todo
 
-- [ ] Implement caching
+- [x] Implement caching
 - [x] Error handling
 - [ ] code commenting
 - [x] tests
