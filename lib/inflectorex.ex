@@ -1,7 +1,5 @@
 defmodule Inflectorex do
-
   use Application 
-
 
   def start(_type, _args) do
     :ets.new(:inflectorex_cache, [:set, :public, :named_table])

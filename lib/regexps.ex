@@ -1,6 +1,9 @@
 defmodule Inflectorex.Regexps do
-    
-    @singular_uninflected [
+
+
+
+    @singular_uninflected Application.get_env(:inflectorex,:singular_uniflected,[]) ++
+                        [
                          ~r/(?i)(^(?:.*[nrlm]ese))$/, 
                          ~r/(?i)(^(?:.*deer))$/, 
                          ~r/(?i)(^(?:.*fish))$/, 
@@ -9,10 +12,11 @@ defmodule Inflectorex.Regexps do
                          ~r/(?i)(^(?:.*pox))$/,
                          ~r/(?i)(^(?:.*sheep))$/,
                          ~r/(?i)(^(?:.*ss))$/ 
-    ]
+                        ] 
 
 
-    @plural_uninflected [
+    @plural_uninflected Application.get_env(:inflectorex,:plural_uniflected,[]) ++
+                        [ 
                          ~r/(?i)(^(?:.*[nrlm]ese))$/, 
                          ~r/(?i)(^(?:.*deer))$/, 
                          ~r/(?i)(^(?:.*fish))$/, 
@@ -21,7 +25,7 @@ defmodule Inflectorex.Regexps do
                          ~r/(?i)(^(?:.*pox))$/,
                          ~r/(?i)(^(?:.*sheep))$/, 
                          ~r/(?i)(^(?:people))$/
-                        ]
+                        ] 
 
     @uninflected ~r/((?i)(^(?:Amoyese))$
                     |(?i)(^(?:bison))$
@@ -104,8 +108,8 @@ defmodule Inflectorex.Regexps do
                     |(?i)(^(?:Yengeese))$)/mix
 
 
-    @plural_regexps [
-                     {~r/(?i)(.*)\b((?:atlas))$/, "atlases"}, 
+    @plural_regexps Application.get_env(:inflectorex,:plural,[]) ++
+                [    {~r/(?i)(.*)\b((?:atlas))$/, "atlases"}, 
                      {~r/(?i)(.*)\b((?:beef))$/, "beefs"}, 
                      {~r/(?i)(.*)\b((?:brother))$/, "brothers"},
                      {~r/(?i)(.*)\b((?:cafe))$/, "cafes"}, 
@@ -166,7 +170,8 @@ defmodule Inflectorex.Regexps do
 
 
     
-    @singular_regexps [
+    @singular_regexps Application.get_env(:inflectorex,:singular,[]) ++
+            [
                      {~r/(?i)(.*)\b((?:foes))$/, "foe"}, 
                      {~r/(?i)(.*)\b((?:waves))$/, "wave"}, 
                      {~r/(?i)(.*)\b((?:curves))$/, "curve"}, 
@@ -241,7 +246,7 @@ defmodule Inflectorex.Regexps do
                      {~r/(?i)(n)ews$/, "\\g{1}\\g{2}ews"},
                      {~r/^(.*us)$/, "\\1"}, 
                      {~r/(?i)s$/, ""},
-                    ]
+                    ] 
     
 
 
