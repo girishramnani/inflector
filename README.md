@@ -33,12 +33,12 @@ keys are as follows -
 
 ## Example config
 
-```
+```elixir
 
 config  :inflectorex, plural: [
     {~r/developer/ , "developers"},
     {~r/elixir/, "elixirs"}
-    ]  
+]  
 
 
 ```
